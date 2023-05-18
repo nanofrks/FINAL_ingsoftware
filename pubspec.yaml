@@ -64,6 +64,9 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/images/
+    - assets/images/emociones/
+    - assets/images/mascotas/
+    - assets/images/tecnicas/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -95,6 +98,9 @@ flutter:
     - family: Cakecafe
       fonts:
         - asset: fonts/Cakecafe.ttf
+    - family: Sniglet
+      fonts:
+        - asset: fonts/Sniglet-Regular.ttf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

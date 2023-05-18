@@ -1,4 +1,6 @@
+import 'package:emook/Views/RegistroView.dart';
 import 'package:flutter/material.dart';
+import 'package:emook/Views/login_view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -139,7 +141,10 @@ class LoginView extends StatelessWidget {
             // Texto para ir a la vista de registro
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/register');
+               Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RegistroView()),
+                  );
               },
               child: Text(
                 '¿No tienes cuenta? Regístrate aquí',
