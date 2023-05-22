@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:emook/Views/PrincipalView.dart';
+
 
 class RegistroView extends StatelessWidget {
   const RegistroView({Key? key}) : super(key: key);
