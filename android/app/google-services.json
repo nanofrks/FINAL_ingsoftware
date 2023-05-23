@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "562029076230",
+    "project_id": "emook-8c78d",
+    "storage_bucket": "emook-8c78d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562029076230:android:6e96f348a7157525348887",
+        "android_client_info": {
+          "package_name": "com.example.emook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562029076230-udma3qgkpkp05tv1qn1nsr7hirqaf4qg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7MHX715XPG-TISgHjo88Do6ILmbsonMY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562029076230-udma3qgkpkp05tv1qn1nsr7hirqaf4qg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
