@@ -1,5 +1,5 @@
 import 'package:emook/Views/RegistroView.dart';
-import 'package:emook/Views/TecnicasView.dart';
+import 'package:emook/Views/PrincipalView.dart';
 import 'package:flutter/material.dart';
 import 'package:emook/Views/login_view.dart';
 
@@ -128,7 +128,7 @@ class LoginView extends StatelessWidget {
                   // Acción al presionar el botón "Continuar"
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => TecnicasView()),
+                    MaterialPageRoute(builder: (context) => PrincipalView()),
                   );
                 },
                 child: Text(
