@@ -1,7 +1,7 @@
 import 'package:emook/Views/RegistroView.dart';
 import 'package:emook/Views/PrincipalView.dart';
 import 'package:flutter/material.dart';
-import 'package:emook/Views/login_view.dart';
+import 'package:emook/Views/AboutView.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -165,7 +165,10 @@ class LoginView extends StatelessWidget {
             // Texto para ir a la vista "Sobre la aplicación"
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/about');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AboutView()),
+                );
               },
               child: Text(
                 'Sobre la aplicación',
