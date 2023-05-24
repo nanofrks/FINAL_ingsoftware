@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:emook/Views/DiarioView.dart';
+import 'package:emook/Views/ListaTareasView.dart';
 
 import 'package:emook/Views/AjustesView.dart';
 
@@ -163,7 +164,10 @@ class PrincipalView extends StatelessWidget {
               children: <Widget>[
                 GestureDetector(
                   onTap: () {
-                    // Navegar a ListaTareasView
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ListaTareasView()),
+                    );
                   },
                   child: Column(
                     children: [
