@@ -1,10 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:emook/Views/RegistroView.dart';
 import 'package:emook/Views/PrincipalView.dart';
-import 'package:flutter/material.dart';
 import 'package:emook/Views/AboutView.dart';
 
 class LoginView extends StatelessWidget {
-  const LoginView({Key? key}) : super(key: key);
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  LoginView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +63,7 @@ class LoginView extends StatelessWidget {
                   SizedBox(width: 8),
                   Expanded(
                     child: TextField(
+                      controller: _emailController,
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Correo o usuario',
@@ -98,6 +104,7 @@ class LoginView extends StatelessWidget {
                   SizedBox(width: 8),
                   Expanded(
                     child: TextField(
+                      controller: _passwordController,
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Contraseña',
@@ -124,12 +131,40 @@ class LoginView extends StatelessWidget {
                 ),
               ),
               child: MaterialButton(
-                onPressed: () {
-                  // Acción al presionar el botón "Continuar"
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => PrincipalView()),
-                  );
+                onPressed: () async {
+                  try {
+                    final UserCredential userCredential =
+                        await _auth.signInWithEmailAndPassword(
+                            email: _emailController.text,
+                            password: _passwordController.text);
+
+                    // Verificar si el inicio de sesión fue exitoso
+                    if (userCredential.user != null) {
+                      // Acción al iniciar sesión correctamente
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PrincipalView()),
+                      );
+                    }
+                  } catch (e) {
+                    // Manejar errores de inicio de sesión
+                    showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        title: Text('Error al iniciar sesión'),
+                        content: Text(e.toString()),
+                        actions: [
+                          TextButton(
+                            child: Text('OK'),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ],
+                      ),
+                    );
+                  }
                 },
                 child: Text(
                   'Continuar',
@@ -142,7 +177,6 @@ class LoginView extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20),
-            // Texto para ir a la vista de registro
             GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -159,10 +193,7 @@ class LoginView extends StatelessWidget {
                 ),
               ),
             ),
-
             Spacer(),
-
-            // Texto para ir a la vista "Sobre la aplicación"
             GestureDetector(
               onTap: () {
                 Navigator.push(
