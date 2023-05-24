@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:emook/Views/DiarioView.dart';
 import 'package:emook/Views/ListaTareasView.dart';
@@ -10,6 +12,8 @@ import 'package:emook/Views/ChatbotView.dart';
 
 
 class PrincipalView extends StatelessWidget {
+  const PrincipalView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,32 +30,32 @@ class PrincipalView extends StatelessWidget {
                   Container(
                     width: 100,
                     height: 100,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       color: Color(0xFF9F9FED),
                     ),
                     child: Container(
                       width: 80,
                       height: 80,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: Color(0xFFFEF9FF),
                       ),
                       child: Image.asset('assets/images/mascotas/pulpo.png'),
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Container(
                     width: 200,
                     height: 100,
                     decoration: BoxDecoration(
-                      color: Color(0xFFFEF9FF),
+                      color: const Color(0xFFFEF9FF),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
                           spreadRadius: 2,
                           blurRadius: 4,
-                          offset: Offset(0, 2),
+                          offset: const Offset(0, 2),
                         ),
                       ],
                     ),
@@ -59,20 +63,20 @@ class PrincipalView extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           'Nombre de la mascota',
                           style: TextStyle(
                             color: Color(0xFF9F9FED),
                             fontFamily: 'Boba Milky',
                           ),
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Container(
                           width: 160,
                           height: 40,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(16),
-                            gradient: LinearGradient(
+                            gradient: const LinearGradient(
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
                               colors: [
@@ -86,10 +90,10 @@ class PrincipalView extends StatelessWidget {
                             // Acción al presionar el botón "Continuar"
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => ChatbotView()),
+                                MaterialPageRoute(builder: (context) => const ChatbotView()),
                                 );
                               },
-                          child: Text(
+                          child: const Text(
                             'Chatea con tu mascota',
                             style: TextStyle(
                               fontFamily: 'Boba Milky',
@@ -105,15 +109,15 @@ class PrincipalView extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20),
-            Divider(
+            const SizedBox(height: 20),
+            const Divider(
               color: Color(0xFFE0D5F4),
               thickness: 4,
               height: 32,
               indent: 16,
               endIndent: 16,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -121,7 +125,7 @@ class PrincipalView extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => DiarioView()),
+                    MaterialPageRoute(builder: (context) => const DiarioView()),
                     );
                   },
                   child: Column(
@@ -131,8 +135,8 @@ class PrincipalView extends StatelessWidget {
                         width: 80,
                         height: 80,
                       ),
-                      SizedBox(height: 8),
-                      Text(
+                      const SizedBox(height: 8),
+                      const Text(
                         'Tu Diario',
                         style: TextStyle(
                           color: Color(0xFFB5AFF5),
@@ -156,8 +160,8 @@ class PrincipalView extends StatelessWidget {
                         width: 80,
                         height: 80,
                       ),
-                      SizedBox(height: 8),
-                      Text(
+                      const SizedBox(height: 8),
+                      const Text(
                         'Manejo de crisis',
                         style: TextStyle(
                           color: Color(0xFFB5AFF5),
@@ -169,7 +173,7 @@ class PrincipalView extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -177,7 +181,7 @@ class PrincipalView extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ListaTareasView()),
+                    MaterialPageRoute(builder: (context) => const ListaTareasView()),
                     );
                   },
                   child: Column(
@@ -187,8 +191,8 @@ class PrincipalView extends StatelessWidget {
                         width: 80,
                         height: 80,
                       ),
-                      SizedBox(height: 8),
-                      Text(
+                      const SizedBox(height: 8),
+                      const Text(
                         'Seguimiento de hábitos',
                         style: TextStyle(
                           color: Color(0xFFB5AFF5),
@@ -202,7 +206,7 @@ class PrincipalView extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => AjustesView()),
+                    MaterialPageRoute(builder: (context) => const AjustesView()),
                     );
                   },
                   child: Column(
@@ -212,8 +216,8 @@ class PrincipalView extends StatelessWidget {
                         width: 80,
                         height: 80,
                       ),
-                      SizedBox(height: 8),
-                      Text(
+                      const SizedBox(height: 8),
+                      const Text(
                         'Ajustes',
                         style: TextStyle(
                           color: Color(0xFFB5AFF5),
@@ -225,20 +229,20 @@ class PrincipalView extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20),
-            Divider(
+            const SizedBox(height: 20),
+            const Divider(
               color: Color(0xFFE0D5F4),
               thickness: 4,
               height: 32,
               indent: 16,
               endIndent: 16,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             GestureDetector(
               onTap: () {
                 // Acción al presionar "Sobre la aplicación"
               },
-              child: Text(
+              child: const Text(
                 'Sobre la aplicación',
                 style: TextStyle(
                   color: Color(0xFF736CED),

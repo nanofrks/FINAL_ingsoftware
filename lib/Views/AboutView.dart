@@ -1,25 +1,30 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:emook/Views/RegistroView.dart';
+
 class AboutView extends StatelessWidget {
+  const AboutView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
      
       body: Container(
-        margin: EdgeInsets.all(16),
-        padding: EdgeInsets.all(16),
+        margin: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: Color(0xFFfef9ff),
+          color: const Color(0xFFfef9ff),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: Color(0xFF9f9fed),
+            color: const Color(0xFF9f9fed),
             width: 6,
           ),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Desarrolladores:',
               style: TextStyle(
                 color: Color(0xFF9f9fed),
@@ -28,8 +33,8 @@ class AboutView extends StatelessWidget {
                 fontFamily: 'Sniglet',
               ),
             ),
-            SizedBox(height: 8),
-            Text(
+            const SizedBox(height: 8),
+            const Text(
               '- Valeria Espinal\n'
               '- Natalia Arboleda\n'
               '- Jeronimo Valencia\n'
@@ -41,8 +46,8 @@ class AboutView extends StatelessWidget {
                 fontFamily: 'Sniglet',
               ),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Lenguajes: Dart, Flutter\n'
               'Entorno: Visual Studio\n'
               'Recursos usados: Canva, Proto.io\n'
@@ -53,7 +58,7 @@ class AboutView extends StatelessWidget {
                 fontFamily: 'Sniglet',
               ),
             ),
-            Spacer(),
+            const Spacer(),
             GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -61,7 +66,7 @@ class AboutView extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => RegistroView()),
                 );
               },
-              child: Text(
+              child: const Text(
                 'Regresar',
                 style: TextStyle(
                   color: Color(0xFF736ced),

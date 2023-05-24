@@ -1,7 +1,11 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:emook/Views/PrincipalView.dart';
 
 class ChatbotView extends StatefulWidget {
+  const ChatbotView({super.key});
+
   @override
   _ChatbotViewState createState() => _ChatbotViewState();
 }
@@ -25,17 +29,17 @@ class _ChatbotViewState extends State<ChatbotView> {
     return Scaffold(
       
       body: Container(
-        color: Color(0xFFeff1f8),
+        color: const Color(0xFFeff1f8),
         child: Column(
           children: [
             Container(
               height: 60,
-              color: Color(0xFF736ced),
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              color: const Color(0xFF736ced),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: [
                   IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.arrow_back,
                       color: Colors.white,
                     ),
@@ -46,8 +50,8 @@ class _ChatbotViewState extends State<ChatbotView> {
                       );
                     },
                   ),
-                  SizedBox(width: 8),
-                  Text(
+                  const SizedBox(width: 8),
+                  const Text(
                     'Chatbot',
                     style: TextStyle(
                       color: Colors.white,
@@ -58,27 +62,27 @@ class _ChatbotViewState extends State<ChatbotView> {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius: 30,
                     backgroundImage: AssetImage('assets/images/mascotas/pulpo.png'),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      padding: EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(16),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                        children: const [
                           Text(
                             'Nombre de la mascota',
                             style: TextStyle(
@@ -109,24 +113,24 @@ class _ChatbotViewState extends State<ChatbotView> {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Expanded(
               child: ListView.builder(
-                padding: EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 itemCount: _chatMessages.length,
                 itemBuilder: (context, index) {
                   String message = _chatMessages[index];
                   return Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8),
+                    padding: const EdgeInsets.symmetric(vertical: 8),
                     child: Container(
-                      padding: EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: Color(0xFF736ced),
+                        color: const Color(0xFF736ced),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
                         message,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontFamily: 'Sniglet',
                         ),
@@ -138,13 +142,13 @@ class _ChatbotViewState extends State<ChatbotView> {
             ),
             Container(
               color: Colors.white,
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: [
                   Expanded(
                     child: TextField(
                       controller: _messageController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Envía un mensaje',
                         hintStyle: TextStyle(
                           fontFamily: 'Sniglet',
@@ -152,11 +156,11 @@ class _ChatbotViewState extends State<ChatbotView> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   FloatingActionButton(
                     onPressed: _sendMessage,
-                    child: Icon(Icons.send),
-                    backgroundColor: Color(0xFF736ced),
+                    backgroundColor: const Color(0xFF736ced),
+                    child: const Icon(Icons.send),
                   ),
                 ],
               ),

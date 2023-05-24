@@ -1,4 +1,7 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -10,7 +13,7 @@ class TecnicasView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           '  Manejo de crisis',
           style: TextStyle(
               fontFamily: 'Boba Milky', fontSize: 28, color: Colors.white),
@@ -27,7 +30,7 @@ class TecnicasView extends StatelessWidget {
           }
 
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
@@ -47,11 +50,11 @@ class TecnicasView extends StatelessWidget {
               final reacciones = document['reacciones'];
 
               return Padding(
-                padding: EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(15.0),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 100.0),
+                    const SizedBox(height: 100.0),
                     Flexible(
                       flex: 1,
                       child: Image.network(
@@ -63,7 +66,7 @@ class TecnicasView extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    SizedBox(width: 8.0),
+                    const SizedBox(width: 8.0),
                     Expanded(
                       flex: 2,
                       child: Column(
@@ -71,21 +74,21 @@ class TecnicasView extends StatelessWidget {
                         children: [
                           Text(
                             tipoCrisis,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 18.0,
                               fontFamily: 'Boba Milky',
                             ),
                           ),
-                          SizedBox(height: 8.0),
+                          const SizedBox(height: 8.0),
                           Text(
                             descripcion,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16.0,
                               fontFamily: 'Boba Milky',
                             ),
                           ),
-                          SizedBox(height: 8.0),
+                          const SizedBox(height: 8.0),
                           GestureDetector(
                             onTap: () {
                               //Incrementar el contador de reacciones en 1
@@ -103,11 +106,11 @@ class TecnicasView extends StatelessWidget {
                             },
                             child: Row(
                               children: [
-                                Icon(Icons.favorite,
+                                const Icon(Icons.favorite,
                                     color: Color.fromARGB(255, 237, 159, 185)),
                                 Text(
                                   reacciones.toString(),
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18.0,
                                     fontFamily: 'Boba Milky',

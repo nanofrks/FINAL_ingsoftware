@@ -1,6 +1,10 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class ListaTareasView extends StatelessWidget {
+  const ListaTareasView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,19 +15,19 @@ class ListaTareasView extends StatelessWidget {
           children: [
             Container(
               height: 48,
-              color: Color(0xFF736CED),
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              color: const Color(0xFF736CED),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.arrow_back),
+                    icon: const Icon(Icons.arrow_back),
                     color: Colors.white,
                     onPressed: () {
                       // Lógica para volver a la vista principal
                     },
                   ),
-                  Spacer(),
-                  Text(
+                  const Spacer(),
+                  const Text(
                     'Seguimiento de hábitos',
                     style: TextStyle(
                       fontFamily: 'BobaMilky',
@@ -31,31 +35,31 @@ class ListaTareasView extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                 ],
               ),
             ),
-            SizedBox(height: 16),
-            HabitButton(
+            const SizedBox(height: 16),
+            const HabitButton(
               task: 'Regar las plantas',
             ),
-            SizedBox(height: 16),
-            HabitButton(
+            const SizedBox(height: 16),
+            const HabitButton(
               task: 'Leer',
             ),
-            SizedBox(height: 16),
-            HabitButton(
+            const SizedBox(height: 16),
+            const HabitButton(
               task: 'Estudiar para el parcial',
             ),
-            SizedBox(height: 16),
-            HabitButton(
+            const SizedBox(height: 16),
+            const HabitButton(
               task: 'Limpiar la arena del gato',
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Expanded(child: Container()),
             FloatingActionButton(
-              backgroundColor: Color(0xFF9F9FED),
-              child: Icon(
+              backgroundColor: const Color(0xFF9F9FED),
+              child: const Icon(
                 Icons.add,
                 color: Colors.white,
               ),
@@ -63,7 +67,7 @@ class ListaTareasView extends StatelessWidget {
                 // Lógica para agregar una nueva tarea
               },
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
           ],
         ),
       ),
@@ -74,7 +78,7 @@ class ListaTareasView extends StatelessWidget {
 class HabitButton extends StatefulWidget {
   final String task;
 
-  HabitButton({required this.task});
+  const HabitButton({super.key, required this.task});
 
   @override
   _HabitButtonState createState() => _HabitButtonState();
@@ -94,10 +98,10 @@ class _HabitButtonState extends State<HabitButton> {
       child: Container(
         width: 420,
         height: 50,
-        padding: EdgeInsets.symmetric(horizontal: 16),
-        margin: EdgeInsets.symmetric(vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        margin: const EdgeInsets.symmetric(vertical: 8),
         decoration: BoxDecoration(
-          color: Color(0xFF9F9FED),
+          color: const Color(0xFF9F9FED),
           borderRadius: BorderRadius.circular(8),
         ),
         child: Row(
@@ -105,7 +109,7 @@ class _HabitButtonState extends State<HabitButton> {
             Container(
               width: 24,
               height: 24,
-              margin: EdgeInsets.only(right: 8),
+              margin: const EdgeInsets.only(right: 8),
               decoration: BoxDecoration(
                 border: Border.all(
                   color: Colors.white,
@@ -114,7 +118,7 @@ class _HabitButtonState extends State<HabitButton> {
                 borderRadius: BorderRadius.circular(4),
               ),
               child: isCompleted
-                  ? Icon(
+                  ? const Icon(
                       Icons.check,
                       color: Colors.black,
                     )

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:emook/Views/login_view.dart';
 
@@ -11,7 +13,7 @@ class AjustesView extends StatelessWidget {
         children: [
           Container(
             height: 80,
-            color: Color(0xFF736CED),
+            color: const Color(0xFF736CED),
             child: Row(
               children: [
                 IconButton(
@@ -22,10 +24,10 @@ class AjustesView extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => LoginView()),
                   );
                   },
-                  icon: Icon(Icons.arrow_back),
+                  icon: const Icon(Icons.arrow_back),
                   color: Colors.white,
                 ),
-                Expanded(
+                const Expanded(
                   child: Center(
                     child: Text(
                       'Ajustes',
@@ -49,7 +51,7 @@ class AjustesView extends StatelessWidget {
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFA7470)),
                 ),
-                child: Padding(
+                child: const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                   child: Text(
                     'Cerrar sesión',
@@ -66,7 +68,7 @@ class AjustesView extends StatelessWidget {
             onTap: () {
               // Acción al presionar el texto "sobre la aplicación"
             },
-            child: Text(
+            child: const Text(
               'Sobre la aplicación',
               style: TextStyle(
                 fontFamily: 'Boba Milky',

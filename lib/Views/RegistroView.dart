@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:emook/Views/PrincipalView.dart';
@@ -7,6 +9,8 @@ class RegistroView extends StatelessWidget {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  RegistroView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +23,8 @@ class RegistroView extends StatelessWidget {
               'assets/images/logo.png',
               height: 120,
             ),
-            SizedBox(height: 8),
-            Text(
+            const SizedBox(height: 8),
+            const Text(
               'Registro',
               style: TextStyle(
                 fontFamily: 'Cakecafe',
@@ -28,9 +32,9 @@ class RegistroView extends StatelessWidget {
                 color: Color(0xff736ced),
               ),
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             Row(
-              children: [
+              children: const [
                 SizedBox(width: 32),
                 Text(
                   'Usuario',
@@ -42,25 +46,25 @@ class RegistroView extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 32),
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              margin: const EdgeInsets.symmetric(horizontal: 32),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0xff9f9fed)),
+                border: Border.all(color: const Color(0xff9f9fed)),
                 borderRadius: BorderRadius.circular(24),
               ),
               child: Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.favorite,
                     color: Color(0xff9f9fed),
                   ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Expanded(
                     child: TextField(
                       controller: _usernameController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Usuario',
                       ),
@@ -69,9 +73,9 @@ class RegistroView extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
-              children: [
+              children: const [
                 SizedBox(width: 32),
                 Text(
                   'Correo',
@@ -83,25 +87,25 @@ class RegistroView extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 32),
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              margin: const EdgeInsets.symmetric(horizontal: 32),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0xff9f9fed)),
+                border: Border.all(color: const Color(0xff9f9fed)),
                 borderRadius: BorderRadius.circular(24),
               ),
               child: Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.favorite,
                     color: Color(0xff9f9fed),
                   ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Expanded(
                     child: TextField(
                       controller: _emailController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Correo',
                       ),
@@ -110,9 +114,9 @@ class RegistroView extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
-              children: [
+              children: const [
                 SizedBox(width: 32),
                 Text(
                   'Contraseña',
@@ -124,25 +128,25 @@ class RegistroView extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 32),
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              margin: const EdgeInsets.symmetric(horizontal: 32),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0xff9f9fed)),
+                border: Border.all(color: const Color(0xff9f9fed)),
                 borderRadius: BorderRadius.circular(24),
               ),
               child: Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.favorite,
                     color: Color(0xff9f9fed),
                   ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Expanded(
                     child: TextField(
                       controller: _passwordController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Contraseña',
                       ),
@@ -152,13 +156,13 @@ class RegistroView extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             Container(
               width: 200,
               height: 50,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(24),
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   colors: [
                     Color(0xffd4c1ec),
                     Color(0xff736ced),
@@ -171,7 +175,7 @@ class RegistroView extends StatelessWidget {
                 onPressed: () {
                   _registerUser(context);
                 },
-                child: Text(
+                child: const Text(
                   'Continuar',
                   style: TextStyle(
                     fontFamily: 'Boba Milky',
@@ -181,13 +185,13 @@ class RegistroView extends StatelessWidget {
                 ),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             // Texto para ir a la vista "Sobre la aplicación"
             GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, '/about');
               },
-              child: Text(
+              child: const Text(
                 'Sobre la aplicación',
                 style: TextStyle(
                   fontFamily: 'Boba Milky',
@@ -212,18 +216,18 @@ class RegistroView extends StatelessWidget {
       // Registro exitoso, redirigir a la vista principal
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => RegistroViewState2()),
+        MaterialPageRoute(builder: (context) => const RegistroViewState2()),
       );
     } catch (e) {
       // Ocurrió un error durante el registro
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text('Error de registro'),
+          title: const Text('Error de registro'),
           content: Text(e.toString()),
           actions: [
             TextButton(
-              child: Text('OK'),
+              child: const Text('OK'),
               onPressed: () {
                 Navigator.pop(context);
               },
@@ -249,8 +253,8 @@ class RegistroViewState2 extends StatelessWidget {
               'assets/images/logo.png',
               height: 120,
             ),
-            SizedBox(height: 8),
-            Text(
+            const SizedBox(height: 8),
+            const Text(
               'Crea tu mascota',
               style: TextStyle(
                 fontFamily: 'Cakecafe',
@@ -258,15 +262,15 @@ class RegistroViewState2 extends StatelessWidget {
                 fontSize: 24,
               ),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Elige su apariencia',
               style: TextStyle(
                 fontFamily: 'Sniglet',
                 fontSize: 16,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -279,7 +283,7 @@ class RegistroViewState2 extends StatelessWidget {
                     height: 80,
                   ),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 GestureDetector(
                   onTap: () {
                     // Acción al seleccionar la imagen
@@ -289,7 +293,7 @@ class RegistroViewState2 extends StatelessWidget {
                     height: 80,
                   ),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 GestureDetector(
                   onTap: () {
                     // Acción al seleccionar la imagen
@@ -301,7 +305,7 @@ class RegistroViewState2 extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -314,7 +318,7 @@ class RegistroViewState2 extends StatelessWidget {
                     height: 80,
                   ),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 GestureDetector(
                   onTap: () {
                     // Acción al seleccionar la imagen
@@ -326,24 +330,24 @@ class RegistroViewState2 extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Elige su nombre',
               style: TextStyle(
                 fontFamily: 'Sniglet',
                 fontSize: 16,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 32),
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              margin: const EdgeInsets.symmetric(horizontal: 32),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0xff9f9fed)),
+                border: Border.all(color: const Color(0xff9f9fed)),
                 borderRadius: BorderRadius.circular(24),
               ),
               child: Row(
-                children: [
+                children: const [
                   Icon(
                     Icons.favorite,
                     color: Color(0xff9f9fed),
@@ -361,13 +365,13 @@ class RegistroViewState2 extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Container(
               width: 200,
               height: 50,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(24),
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   colors: [
                     Color(0xffd4c1ec),
                     Color(0xff736ced),
@@ -381,10 +385,10 @@ class RegistroViewState2 extends StatelessWidget {
                   // Acción al presionar el botón "Continuar"
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => PrincipalView()),
+                    MaterialPageRoute(builder: (context) => const PrincipalView()),
                   );
                 },
-                child: Text(
+                child: const Text(
                   'Continuar',
                   style: TextStyle(
                     fontFamily: 'Boba Milky',
@@ -395,14 +399,14 @@ class RegistroViewState2 extends StatelessWidget {
               ),
             ),
 
-            Spacer(),
+            const Spacer(),
 
             // Texto para ir a la vista "Sobre la aplicación"
             GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, '/about');
               },
-              child: Text(
+              child: const Text(
                 'Sobre la aplicación',
                 style: TextStyle(
                   fontFamily: 'Boba Milky',

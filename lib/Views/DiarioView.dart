@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:emook/Views/PrincipalView.dart';
 
@@ -13,7 +15,7 @@ class DiarioView extends StatelessWidget {
           children: [
             Container(
               height: 50,
-              color: Color(0xFF736CED),
+              color: const Color(0xFF736CED),
               child: Row(
                 children: [
                   IconButton(
@@ -24,10 +26,10 @@ class DiarioView extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => PrincipalView()),
                       );
                     },
-                    icon: Icon(Icons.arrow_back),
+                    icon: const Icon(Icons.arrow_back),
                     color: Colors.white,
                   ),
-                  Expanded(
+                  const Expanded(
                     child: Center(
                       child: Text(
                         'Diario',
@@ -48,7 +50,7 @@ class DiarioView extends StatelessWidget {
               },
               child: Container(
                 height: 120,
-                color: Color(0xFFFEF9FF),
+                color: const Color(0xFFFEF9FF),
                 child: Row(
                   children: [
                     Image.asset(
@@ -56,28 +58,28 @@ class DiarioView extends StatelessWidget {
                       width: 80,
                       height: 80,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'Alegre',
                           style: TextStyle(
                             fontFamily: 'Sniglet',
                             color: Color(0xFF736CED),
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Row(
-                          children: [
+                          children: const [
                             TagWidget(text: 'mascota'),
                             TagWidget(text: 'familia'),
                             TagWidget(text: 'pareja'),
                           ],
                         ),
-                        SizedBox(height: 10),
-                        Text(
+                        const SizedBox(height: 10),
+                        const Text(
                           'Fecha y hora',
                           style: TextStyle(
                             fontFamily: 'Sniglet',
@@ -104,27 +106,27 @@ class DiarioView extends StatelessWidget {
                       width: 80,
                       height: 80,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'Optimista',
                           style: TextStyle(
                             fontFamily: 'Sniglet',
                             color: Color(0xFF736CED),
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Row(
-                          children: [
+                          children: const [
                             TagWidget(text: 'descanso'),
                             TagWidget(text: 'amigos'),
                           ],
                         ),
-                        SizedBox(height: 10),
-                        Text(
+                        const SizedBox(height: 10),
+                        const Text(
                           'Fecha y hora',
                           style: TextStyle(
                             fontFamily: 'Sniglet',
@@ -143,7 +145,7 @@ class DiarioView extends StatelessWidget {
               },
               child: Container(
                 height: 120,
-                color: Color(0xFFFEF9FF),
+                color: const Color(0xFFFEF9FF),
                 child: Row(
                   children: [
                     Image.asset(
@@ -151,26 +153,26 @@ class DiarioView extends StatelessWidget {
                       width: 80,
                       height: 80,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'Herido',
                           style: TextStyle(
                             fontFamily: 'Sniglet',
                             color: Color(0xFF736CED),
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Row(
-                          children: [
+                          children: const [
                             TagWidget(text: 'trabajo'),
                           ],
                         ),
-                        SizedBox(height: 10),
-                        Text(
+                        const SizedBox(height: 10),
+                        const Text(
                           'Fecha y hora',
                           style: TextStyle(
                             fontFamily: 'Sniglet',
@@ -197,27 +199,27 @@ class DiarioView extends StatelessWidget {
                       width: 80,
                       height: 80,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'Deprimido',
                           style: TextStyle(
                             fontFamily: 'Sniglet',
                             color: Color(0xFF736CED),
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Row(
-                          children: [
+                          children: const [
                             TagWidget(text: 'familia'),
                             TagWidget(text: 'amigos'),
                           ],
                         ),
-                        SizedBox(height: 10),
-                        Text(
+                        const SizedBox(height: 10),
+                        const Text(
                           'Fecha y hora',
                           style: TextStyle(
                             fontFamily: 'Sniglet',
@@ -236,7 +238,7 @@ class DiarioView extends StatelessWidget {
               },
               child: Container(
                 height: 120,
-                color: Color(0xFFFEF9FF),
+                color: const Color(0xFFFEF9FF),
                 child: Row(
                   children: [
                     Image.asset(
@@ -244,26 +246,26 @@ class DiarioView extends StatelessWidget {
                       width: 80,
                       height: 80,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'Orgulloso',
                           style: TextStyle(
                             fontFamily: 'Sniglet',
                             color: Color(0xFF736CED),
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Row(
-                          children: [
+                          children: const [
                             TagWidget(text: 'logro'),
                           ],
                         ),
-                        SizedBox(height: 10),
-                        Text(
+                        const SizedBox(height: 10),
+                        const Text(
                           'Fecha y hora',
                           style: TextStyle(
                             fontFamily: 'Sniglet',
@@ -276,12 +278,12 @@ class DiarioView extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             GestureDetector(
               onTap: () {
                 // Acción al presionar el texto "sobre la aplicación"
               },
-              child: Text(
+              child: const Text(
                 'Sobre la aplicación',
                 style: TextStyle(
                   fontFamily: 'Boba Milky',
@@ -299,20 +301,20 @@ class DiarioView extends StatelessWidget {
 class TagWidget extends StatelessWidget {
   final String text;
 
-  const TagWidget({required this.text});
+  const TagWidget({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 10),
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      margin: const EdgeInsets.only(right: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
-        color: Color(0xFFD4C1EC),
+        color: const Color(0xFFD4C1EC),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Text(
         text,
-        style: TextStyle(
+        style: const TextStyle(
           fontFamily: 'Sniglet',
           color: Colors.black,
         ),
