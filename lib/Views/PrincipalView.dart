@@ -5,6 +5,8 @@ import 'package:emook/Views/ListaTareasView.dart';
 import 'package:emook/Views/AjustesView.dart';
 
 import 'package:emook/Views/TecnicasView.dart';
+import 'package:emook/Views/ChatbotView.dart';
+
 
 
 class PrincipalView extends StatelessWidget {
@@ -53,6 +55,7 @@ class PrincipalView extends StatelessWidget {
                         ),
                       ],
                     ),
+                    
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -78,15 +81,23 @@ class PrincipalView extends StatelessWidget {
                               ],
                             ),
                           ),
-                          child: Center(
-                            child: Text(
-                              'Chatea con tu mascota',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: 'Boba Milky',
-                              ),
+                          child: MaterialButton(
+                            onPressed: () {
+                            // Acción al presionar el botón "Continuar"
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => ChatbotView()),
+                                );
+                              },
+                          child: Text(
+                            'Chatea con tu mascota',
+                            style: TextStyle(
+                              fontFamily: 'Boba Milky',
+                              fontSize: 18,
+                              color: Colors.white,
                             ),
                           ),
+                        ),
                         ),
                       ],
                     ),

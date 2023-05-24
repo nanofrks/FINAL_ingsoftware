@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:emook/Views/RegistroView.dart';
+import 'package:emook/Views/login_view.dart';
+
 class AjustesView extends StatelessWidget {
   const AjustesView({Key? key}) : super(key: key);
 
@@ -18,7 +19,7 @@ class AjustesView extends StatelessWidget {
                     // Acción al presionar el icono de flecha hacia la izquierda
                     Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => RegistroView()),
+                    MaterialPageRoute(builder: (context) => LoginView()),
                   );
                   },
                   icon: Icon(Icons.arrow_back),
