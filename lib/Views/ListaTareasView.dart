@@ -20,11 +20,12 @@ class ListaTareasView extends StatelessWidget {
               child: Row(
                 children: [
                   IconButton(
+                    onPressed: () {
+                      // Acción al presionar el icono de flecha hacia la izquierda
+                      Navigator.pop(context);
+                    },
                     icon: const Icon(Icons.arrow_back),
                     color: Colors.white,
-                    onPressed: () {
-                      // Lógica para volver a la vista principal
-                    },
                   ),
                   const Spacer(),
                   const Text(
