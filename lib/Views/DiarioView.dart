@@ -6,12 +6,12 @@ class DiarioView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              height: 80,
+              height: 50,
               color: Color(0xFF736CED),
               child: Row(
                 children: [
@@ -37,20 +37,19 @@ class DiarioView extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20),
             GestureDetector(
               onTap: () {
                 // Acción al presionar el primer container
               },
               child: Container(
-                height: 200,
+                height: 120,
                 color: Color(0xFFFEF9FF),
                 child: Row(
                   children: [
                     Image.asset(
                       'assets/images/emociones/sonrisa.png',
-                      width: 150,
-                      height: 150,
+                      width: 80,
+                      height: 80,
                     ),
                     SizedBox(width: 10),
                     Column(
@@ -86,20 +85,19 @@ class DiarioView extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
             GestureDetector(
               onTap: () {
                 // Acción al presionar el segundo container
               },
               child: Container(
-                height: 200,
+                height: 120,
                 color: Colors.white,
                 child: Row(
                   children: [
                     Image.asset(
                       'assets/images/emociones/sonrisa (1).png',
-                      width: 150,
-                      height: 150,
+                      width: 80,
+                      height: 80,
                     ),
                     SizedBox(width: 10),
                     Column(
@@ -134,20 +132,19 @@ class DiarioView extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
             GestureDetector(
               onTap: () {
                 // Acción al presionar el tercer container
               },
               child: Container(
-                height: 200,
+                height: 120,
                 color: Color(0xFFFEF9FF),
                 child: Row(
                   children: [
                     Image.asset(
                       'assets/images/emociones/triste.png',
-                      width: 150,
-                      height: 150,
+                      width: 80,
+                      height: 80,
                     ),
                     SizedBox(width: 10),
                     Column(
@@ -181,20 +178,19 @@ class DiarioView extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
             GestureDetector(
               onTap: () {
                 // Acción al presionar el cuarto container
               },
               child: Container(
-                height: 200,
+                height: 120,
                 color: Colors.white,
                 child: Row(
                   children: [
                     Image.asset(
-                      'assets/images/emociones/pensado.png',
-                      width: 150,
-                      height: 150,
+                      'assets/images/emociones/pensando.png',
+                      width: 80,
+                      height: 80,
                     ),
                     SizedBox(width: 10),
                     Column(
@@ -229,20 +225,19 @@ class DiarioView extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
             GestureDetector(
               onTap: () {
                 // Acción al presionar el quinto container
               },
               child: Container(
-                height: 200,
+                height: 120,
                 color: Color(0xFFFEF9FF),
                 child: Row(
                   children: [
                     Image.asset(
                       'assets/images/emociones/frio.png',
-                      width: 150,
-                      height: 150,
+                      width: 80,
+                      height: 80,
                     ),
                     SizedBox(width: 10),
                     Column(

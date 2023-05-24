@@ -10,13 +10,15 @@ class PrincipalView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              margin: EdgeInsets.only(bottom: 20),
+              alignment: Alignment.center,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
                     width: 100,
@@ -32,14 +34,10 @@ class PrincipalView extends StatelessWidget {
                         shape: BoxShape.circle,
                         color: Color(0xFFFEF9FF),
                       ),
-                      child: Image.asset(
-                        'assets/images/pulpo.png',
-                        width: 60,
-                        height: 60,
-                      ),
+                      child: Image.asset('assets/images/mascotas/pulpo.png'),
                     ),
                   ),
-                  SizedBox(width: 20),
+                  SizedBox(width: 16),
                   Container(
                     width: 200,
                     height: 100,
@@ -47,40 +45,45 @@ class PrincipalView extends StatelessWidget {
                       color: Color(0xFFFEF9FF),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.1),
+                          color: Colors.grey.withOpacity(0.3),
                           spreadRadius: 2,
-                          blurRadius: 5,
-                          offset: Offset(0, 3),
+                          blurRadius: 4,
+                          offset: Offset(0, 2),
                         ),
                       ],
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'Nombre de la mascota',
                           style: TextStyle(
-                            fontFamily: 'Boba Milky',
                             color: Color(0xFF9F9FED),
+                            fontFamily: 'Boba Milky',
                           ),
                         ),
-                        SizedBox(height: 10),
-                        ElevatedButton(
-                          onPressed: () {
-                            // Acción al presionar el botón "Chatea con tu mascota"
-                          },
-                          style: ElevatedButton.styleFrom(
-                            primary: Color(0xFFB4AEF5),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
+                        SizedBox(height: 8),
+                        Container(
+                          width: 160,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                            gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [
+                                Color(0xFFE0D5F4),
+                                Color(0xFFB4AEF5),
+                              ],
                             ),
                           ),
-                          child: Text(
-                            'Chatea con tu mascota',
-                            style: TextStyle(
-                              fontFamily: 'Boba Milky',
-                              color: Colors.white,
+                          child: Center(
+                            child: Text(
+                              'Chatea con tu mascota',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'Boba Milky',
+                              ),
                             ),
                           ),
                         ),
@@ -90,15 +93,18 @@ class PrincipalView extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              height: 2,
-              width: 200,
+            SizedBox(height: 20),
+            Divider(
               color: Color(0xFFE0D5F4),
+              thickness: 4,
+              height: 32,
+              indent: 16,
+              endIndent: 16,
             ),
             SizedBox(height: 20),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -113,18 +119,17 @@ class PrincipalView extends StatelessWidget {
                         width: 80,
                         height: 80,
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 8),
                       Text(
                         'Tu Diario',
                         style: TextStyle(
-                          fontFamily: 'Sniglet',
                           color: Color(0xFFB5AFF5),
+                          fontFamily: 'Sniglet',
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(width: 40),
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -139,12 +144,12 @@ class PrincipalView extends StatelessWidget {
                         width: 80,
                         height: 80,
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 8),
                       Text(
                         'Manejo de crisis',
                         style: TextStyle(
-                          fontFamily: 'Sniglet',
                           color: Color(0xFFB5AFF5),
+                          fontFamily: 'Sniglet',
                         ),
                       ),
                     ],
@@ -154,11 +159,11 @@ class PrincipalView extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
                 GestureDetector(
                   onTap: () {
-                    // Acción al presionar la tercera imagen
+                    // Navegar a ListaTareasView
                   },
                   child: Column(
                     children: [
@@ -167,18 +172,17 @@ class PrincipalView extends StatelessWidget {
                         width: 80,
                         height: 80,
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 8),
                       Text(
                         'Seguimiento de hábitos',
                         style: TextStyle(
-                          fontFamily: 'Sniglet',
                           color: Color(0xFFB5AFF5),
+                          fontFamily: 'Sniglet',
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(width: 40),
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -193,12 +197,12 @@ class PrincipalView extends StatelessWidget {
                         width: 80,
                         height: 80,
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 8),
                       Text(
                         'Ajustes',
                         style: TextStyle(
-                          fontFamily: 'Sniglet',
                           color: Color(0xFFB5AFF5),
+                          fontFamily: 'Sniglet',
                         ),
                       ),
                     ],
@@ -207,21 +211,23 @@ class PrincipalView extends StatelessWidget {
               ],
             ),
             SizedBox(height: 20),
-            Container(
-              height: 2,
-              width: 200,
+            Divider(
               color: Color(0xFFE0D5F4),
+              thickness: 4,
+              height: 32,
+              indent: 16,
+              endIndent: 16,
             ),
             SizedBox(height: 20),
             GestureDetector(
               onTap: () {
-                // Acción al presionar "sobre la aplicación"
+                // Acción al presionar "Sobre la aplicación"
               },
               child: Text(
                 'Sobre la aplicación',
                 style: TextStyle(
-                  fontFamily: 'Boba Milky',
                   color: Color(0xFF736CED),
+                  fontFamily: 'Boba Milky',
                 ),
               ),
             ),
@@ -231,3 +237,4 @@ class PrincipalView extends StatelessWidget {
     );
   }
 }
+
