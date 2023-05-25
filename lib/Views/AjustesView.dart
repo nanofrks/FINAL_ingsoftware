@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:emook/Views/AboutView.dart';
 import 'package:flutter/material.dart';
 import 'package:emook/Views/login_view.dart';
 
@@ -18,9 +19,9 @@ class AjustesView extends StatelessWidget {
               children: [
                 IconButton(
                   onPressed: () {
-                      // Acción al presionar el icono de flecha hacia la izquierda
-                      Navigator.pop(context);
-                    },
+                    // Acción al presionar el icono de flecha hacia la izquierda
+                    Navigator.pop(context);
+                  },
                   icon: const Icon(Icons.arrow_back),
                   color: Colors.white,
                 ),
@@ -50,7 +51,8 @@ class AjustesView extends StatelessWidget {
                   );
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFFFA7470)),
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(const Color(0xFFFA7470)),
                 ),
                 child: const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
@@ -67,6 +69,10 @@ class AjustesView extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AboutView()),
+              );
               // Acción al presionar el texto "sobre la aplicación"
             },
             child: const Text(

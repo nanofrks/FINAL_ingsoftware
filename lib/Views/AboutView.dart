@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:emook/Views/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:emook/Views/RegistroView.dart';
 
@@ -9,7 +10,6 @@ class AboutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     
       body: Container(
         margin: const EdgeInsets.all(16),
         padding: const EdgeInsets.all(16),
@@ -63,7 +63,7 @@ class AboutView extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => RegistroView()),
+                  MaterialPageRoute(builder: (context) => LoginView()),
                 );
               },
               child: const Text(
@@ -81,5 +81,3 @@ class AboutView extends StatelessWidget {
     );
   }
 }
-
-

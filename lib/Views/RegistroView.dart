@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:emook/Views/AboutView.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:emook/Views/PrincipalView.dart';
@@ -190,7 +191,10 @@ class RegistroView extends StatelessWidget {
             // Texto para ir a la vista "Sobre la aplicación"
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/about');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AboutView()),
+                );
               },
               child: const Text(
                 'Sobre la aplicación',
@@ -450,7 +454,10 @@ class RegistroViewState2 extends StatelessWidget {
             // Texto para ir a la vista "Sobre la aplicación"
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/about');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AboutView()),
+                );
               },
               child: const Text(
                 'Sobre la aplicación',

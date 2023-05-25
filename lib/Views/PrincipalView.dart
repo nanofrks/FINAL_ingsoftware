@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:emook/Views/AboutView.dart';
 import 'package:flutter/material.dart';
 import 'package:emook/Views/DiarioView.dart';
 import 'package:emook/Views/ListaTareasView.dart';
@@ -281,6 +282,10 @@ class _PrincipalViewState extends State<PrincipalView> {
             const SizedBox(height: 20),
             GestureDetector(
               onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AboutView()),
+                );
                 // Acción al presionar "Sobre la aplicación"
               },
               child: const Text(

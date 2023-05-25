@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:emook/Views/AboutView.dart';
 import 'package:flutter/material.dart';
 import 'package:emook/Views/PrincipalView.dart';
 
@@ -295,6 +296,10 @@ class DiarioView extends StatelessWidget {
             const SizedBox(height: 20),
             GestureDetector(
               onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AboutView()),
+                );
                 // Acción al presionar el texto "sobre la aplicación"
               },
               child: const Text(
