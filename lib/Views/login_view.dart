@@ -138,13 +138,16 @@ class LoginView extends StatelessWidget {
                             email: _emailController.text,
                             password: _passwordController.text);
 
+                    String userId = userCredential.user!.uid;
                     // Verificar si el inicio de sesión fue exitoso
                     if (userCredential.user != null) {
                       // Acción al iniciar sesión correctamente
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const PrincipalView()),
+                            builder: (context) => PrincipalView(
+                                  userId: userId,
+                                )),
                       );
                     }
                   } catch (e) {

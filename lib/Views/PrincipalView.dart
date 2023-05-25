@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:emook/Views/DiarioView.dart';
 import 'package:emook/Views/ListaTareasView.dart';
@@ -9,15 +10,46 @@ import 'package:emook/Views/AjustesView.dart';
 import 'package:emook/Views/TecnicasView.dart';
 import 'package:emook/Views/ChatbotView.dart';
 
+class PrincipalView extends StatefulWidget {
+  final String userId;
 
+  PrincipalView({Key? key, required this.userId}) : super(key: key);
 
-class PrincipalView extends StatelessWidget {
-  const PrincipalView({super.key});
+  @override
+  _PrincipalViewState createState() => _PrincipalViewState();
+}
+
+class _PrincipalViewState extends State<PrincipalView> {
+  late String Imascota = "";
+  late String Nmascota = "";
+
+  @override
+  void initState() {
+    super.initState();
+    getUserData();
+  }
+
+  void getUserData() {
+    FirebaseFirestore.instance
+        .collection('users')
+        .doc(widget.userId)
+        .get()
+        .then((DocumentSnapshot snapshot) {
+      if (snapshot.exists) {
+        setState(() {
+          Imascota = snapshot['Imascota'];
+          Nmascota = snapshot['Nmascota'];
+        });
+      }
+    }).catchError((error) {
+      // Handle the error
+      print(error);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -41,7 +73,7 @@ class PrincipalView extends StatelessWidget {
                         shape: BoxShape.circle,
                         color: Color(0xFFFEF9FF),
                       ),
-                      child: Image.asset('assets/images/mascotas/pulpo.png'),
+                      child: Image.asset(Imascota),
                     ),
                   ),
                   const SizedBox(width: 16),
@@ -59,12 +91,11 @@ class PrincipalView extends StatelessWidget {
                         ),
                       ],
                     ),
-                    
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
-                          'Nombre de la mascota',
+                        Text(
+                          Nmascota,
                           style: TextStyle(
                             color: Color(0xFF9F9FED),
                             fontFamily: 'Boba Milky',
@@ -87,21 +118,24 @@ class PrincipalView extends StatelessWidget {
                           ),
                           child: MaterialButton(
                             onPressed: () {
-                            // Acción al presionar el botón "Continuar"
+                              // Acción al presionar el botón "Continuar"
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => const ChatbotView()),
-                                );
-                              },
-                          child: const Text(
-                            'Chatea con tu mascota',
-                            style: TextStyle(
-                              fontFamily: 'Boba Milky',
-                              fontSize: 18,
-                              color: Colors.white,
+                                MaterialPageRoute(
+                                    builder: (context) => ChatbotView(
+                                          userId: widget.userId,
+                                        )),
+                              );
+                            },
+                            child: const Text(
+                              'Chatea con tu mascota',
+                              style: TextStyle(
+                                fontFamily: 'Boba Milky',
+                                fontSize: 18,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
-                        ),
                         ),
                       ],
                     ),
@@ -124,8 +158,11 @@ class PrincipalView extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const DiarioView()),
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DiarioView(
+                                userId: widget.userId,
+                              )),
                     );
                   },
                   child: Column(
@@ -149,8 +186,8 @@ class PrincipalView extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => TecnicasView()),
+                      context,
+                      MaterialPageRoute(builder: (context) => TecnicasView()),
                     );
                   },
                   child: Column(
@@ -180,8 +217,9 @@ class PrincipalView extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const ListaTareasView()),
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ListaTareasView()),
                     );
                   },
                   child: Column(
@@ -205,8 +243,9 @@ class PrincipalView extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const AjustesView()),
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AjustesView()),
                     );
                   },
                   child: Column(
@@ -256,4 +295,3 @@ class PrincipalView extends StatelessWidget {
     );
   }
 }
-

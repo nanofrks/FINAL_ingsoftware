@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:emook/Views/PrincipalView.dart';
 
 class ChatbotView extends StatefulWidget {
-  const ChatbotView({super.key});
+  final String userId;
+  const ChatbotView({super.key, required this.userId});
 
   @override
   _ChatbotViewState createState() => _ChatbotViewState();
@@ -27,7 +28,6 @@ class _ChatbotViewState extends State<ChatbotView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Container(
         color: const Color(0xFFeff1f8),
         child: Column(
@@ -45,8 +45,11 @@ class _ChatbotViewState extends State<ChatbotView> {
                     ),
                     onPressed: () {
                       Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => PrincipalView()),
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PrincipalView(
+                                  userId: widget.userId,
+                                )),
                       );
                     },
                   ),
@@ -70,7 +73,8 @@ class _ChatbotViewState extends State<ChatbotView> {
                 children: [
                   const CircleAvatar(
                     radius: 30,
-                    backgroundImage: AssetImage('assets/images/mascotas/pulpo.png'),
+                    backgroundImage:
+                        AssetImage('assets/images/mascotas/pulpo.png'),
                   ),
                   const SizedBox(width: 16),
                   Expanded(

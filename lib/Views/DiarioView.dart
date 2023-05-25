@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:emook/Views/PrincipalView.dart';
 
 class DiarioView extends StatelessWidget {
-  const DiarioView({Key? key}) : super(key: key);
+  final String userId;
+  const DiarioView({Key? key, required this.userId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +23,11 @@ class DiarioView extends StatelessWidget {
                     onPressed: () {
                       // Acción al presionar el icono de flecha hacia la izquierda
                       Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => PrincipalView()),
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PrincipalView(
+                                  userId: userId,
+                                )),
                       );
                     },
                     icon: const Icon(Icons.arrow_back),

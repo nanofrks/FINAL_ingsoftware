@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:emook/Views/PrincipalView.dart';
@@ -213,10 +214,13 @@ class RegistroView extends StatelessWidget {
         email: _emailController.text.trim(),
         password: _passwordController.text,
       );
+      String userId = userCredential
+          .user!.uid; //variable que guarda la id de usuario en la BD
       // Registro exitoso, redirigir a la vista principal
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const RegistroViewState2()),
+        MaterialPageRoute(
+            builder: (context) => RegistroViewState2(userId: userId)),
       );
     } catch (e) {
       // Ocurrió un error durante el registro
@@ -240,7 +244,10 @@ class RegistroView extends StatelessWidget {
 }
 
 class RegistroViewState2 extends StatelessWidget {
-  const RegistroViewState2({Key? key}) : super(key: key);
+  final String userId;
+  String mascota = "";
+  final TextEditingController _nombremascota = TextEditingController();
+  RegistroViewState2({Key? key, required this.userId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -277,6 +284,7 @@ class RegistroViewState2 extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     // Acción al seleccionar la imagen
+                    mascota = 'assets/images/mascotas/pulpo.png';
                   },
                   child: Image.asset(
                     'assets/images/mascotas/pulpo.png',
@@ -287,6 +295,7 @@ class RegistroViewState2 extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     // Acción al seleccionar la imagen
+                    mascota = 'assets/images/mascotas/gato.png';
                   },
                   child: Image.asset(
                     'assets/images/mascotas/gato.png',
@@ -297,6 +306,7 @@ class RegistroViewState2 extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     // Acción al seleccionar la imagen
+                    mascota = 'assets/images/mascotas/murcielago.png';
                   },
                   child: Image.asset(
                     'assets/images/mascotas/murcielago.png',
@@ -312,6 +322,7 @@ class RegistroViewState2 extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     // Acción al seleccionar la imagen
+                    mascota = 'assets/images/mascotas/rhinoceros.png';
                   },
                   child: Image.asset(
                     'assets/images/mascotas/rhinoceros.png',
@@ -322,6 +333,7 @@ class RegistroViewState2 extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     // Acción al seleccionar la imagen
+                    mascota = 'assets/images/mascotas/hormiga.png';
                   },
                   child: Image.asset(
                     'assets/images/mascotas/hormiga.png',
@@ -347,7 +359,7 @@ class RegistroViewState2 extends StatelessWidget {
                 borderRadius: BorderRadius.circular(24),
               ),
               child: Row(
-                children: const [
+                children: [
                   Icon(
                     Icons.favorite,
                     color: Color(0xff9f9fed),
@@ -355,6 +367,7 @@ class RegistroViewState2 extends StatelessWidget {
                   SizedBox(width: 8),
                   Expanded(
                     child: TextField(
+                      controller: _nombremascota,
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Nombre de la mascota',
@@ -381,12 +394,45 @@ class RegistroViewState2 extends StatelessWidget {
                 ),
               ),
               child: MaterialButton(
-                onPressed: () {
+                onPressed: () async {
+                  try {
+                    if (mascota.isNotEmpty && _nombremascota.text.isNotEmpty) {
+                      await FirebaseFirestore.instance
+                          .collection('users')
+                          .doc(userId)
+                          .set({
+                        'Nmascota': _nombremascota.text,
+                        'Imascota': mascota,
+                      });
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PrincipalView(
+                                  userId: userId,
+                                )),
+                      );
+                    } else {
+                      throw Exception(
+                          "no a escogido una mascota o no le a asignado un nombre");
+                    }
+                  } catch (e) {
+                    showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        title: const Text('Error de registro'),
+                        content: Text(e.toString()),
+                        actions: [
+                          TextButton(
+                            child: const Text('OK'),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ],
+                      ),
+                    );
+                  }
                   // Acción al presionar el botón "Continuar"
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const PrincipalView()),
-                  );
                 },
                 child: const Text(
                   'Continuar',
