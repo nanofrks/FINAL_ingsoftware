@@ -124,6 +124,8 @@ class _PrincipalViewState extends State<PrincipalView> {
                                 MaterialPageRoute(
                                     builder: (context) => ChatbotView(
                                           userId: widget.userId,
+                                          Imascota: Imascota,
+                                          Nmascota: Nmascota,
                                         )),
                               );
                             },

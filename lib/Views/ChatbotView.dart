@@ -5,7 +5,13 @@ import 'package:emook/Views/PrincipalView.dart';
 
 class ChatbotView extends StatefulWidget {
   final String userId;
-  const ChatbotView({super.key, required this.userId});
+  late String Imascota = "";
+  late String Nmascota = "";
+  ChatbotView(
+      {super.key,
+      required this.userId,
+      required this.Imascota,
+      required this.Nmascota});
 
   @override
   _ChatbotViewState createState() => _ChatbotViewState();
@@ -71,10 +77,9 @@ class _ChatbotViewState extends State<ChatbotView> {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CircleAvatar(
+                  CircleAvatar(
                     radius: 30,
-                    backgroundImage:
-                        AssetImage('assets/images/mascotas/pulpo.png'),
+                    backgroundImage: AssetImage(widget.Imascota),
                   ),
                   const SizedBox(width: 16),
                   Expanded(
@@ -86,9 +91,9 @@ class _ChatbotViewState extends State<ChatbotView> {
                       padding: const EdgeInsets.all(16),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
-                            'Nombre de la mascota',
+                            widget.Nmascota,
                             style: TextStyle(
                               color: Color(0xFF9f9fed),
                               fontFamily: 'Boba Milky',
