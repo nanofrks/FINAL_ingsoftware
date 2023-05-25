@@ -66,7 +66,7 @@ class LoginView extends StatelessWidget {
                       controller: _emailController,
                       decoration: const InputDecoration(
                         border: InputBorder.none,
-                        hintText: 'Correo o usuario',
+                        hintText: 'Correo',
                       ),
                     ),
                   ),
