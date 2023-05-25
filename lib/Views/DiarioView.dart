@@ -282,6 +282,16 @@ class DiarioView extends StatelessWidget {
                 ),
               ),
             ),
+            FloatingActionButton(
+              backgroundColor: const Color(0xFF9F9FED),
+              child: const Icon(
+                Icons.add,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                // Lógica para agregar una nueva tarea
+              },
+            ),
             const SizedBox(height: 20),
             GestureDetector(
               onTap: () {
