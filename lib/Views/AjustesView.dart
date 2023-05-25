@@ -18,12 +18,9 @@ class AjustesView extends StatelessWidget {
               children: [
                 IconButton(
                   onPressed: () {
-                    // Acción al presionar el icono de flecha hacia la izquierda
-                    Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginView()),
-                  );
-                  },
+                      // Acción al presionar el icono de flecha hacia la izquierda
+                      Navigator.pop(context);
+                    },
                   icon: const Icon(Icons.arrow_back),
                   color: Colors.white,
                 ),
@@ -49,7 +46,7 @@ class AjustesView extends StatelessWidget {
                   // Acción al presionar el botón "Cerrar sesión"
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFA7470)),
+                  backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFFFA7470)),
                 ),
                 child: const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
