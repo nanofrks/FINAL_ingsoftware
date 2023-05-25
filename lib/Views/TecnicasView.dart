@@ -13,6 +13,7 @@ class TecnicasView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFF736CED),
         title: const Text(
           '  Manejo de crisis',
           style: TextStyle(
