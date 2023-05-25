@@ -53,6 +53,8 @@ class DiarioView extends StatelessWidget {
               onTap: () {
                 // Acción al presionar el primer container
               },
+
+              //entrada "alegre"
               child: Container(
                 height: 120,
                 color: const Color(0xFFFEF9FF),
@@ -101,6 +103,8 @@ class DiarioView extends StatelessWidget {
               onTap: () {
                 // Acción al presionar el segundo container
               },
+
+              //entrada "optimista"
               child: Container(
                 height: 120,
                 color: Colors.white,
@@ -148,6 +152,8 @@ class DiarioView extends StatelessWidget {
               onTap: () {
                 // Acción al presionar el tercer container
               },
+
+              //entrada "herido"
               child: Container(
                 height: 120,
                 color: const Color(0xFFFEF9FF),
@@ -194,6 +200,8 @@ class DiarioView extends StatelessWidget {
               onTap: () {
                 // Acción al presionar el cuarto container
               },
+
+              //entrada "deprimido"
               child: Container(
                 height: 120,
                 color: Colors.white,
@@ -241,6 +249,8 @@ class DiarioView extends StatelessWidget {
               onTap: () {
                 // Acción al presionar el quinto container
               },
+
+              //entrada "orgulloso"
               child: Container(
                 height: 120,
                 color: const Color(0xFFFEF9FF),
@@ -283,6 +293,8 @@ class DiarioView extends StatelessWidget {
                 ),
               ),
             ),
+
+            //botón para añadir una nueva entrada (no implementado)
             FloatingActionButton(
               backgroundColor: const Color(0xFF9F9FED),
               child: const Icon(
@@ -290,7 +302,7 @@ class DiarioView extends StatelessWidget {
                 color: Colors.white,
               ),
               onPressed: () {
-                // Lógica para agregar una nueva tarea
+                // Lógica para agregar una nueva entrada
               },
             ),
             const SizedBox(height: 20),
@@ -324,6 +336,8 @@ class TagWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
+    //etiquetas de los contenedores
     return Container(
       margin: const EdgeInsets.only(right: 10),
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),

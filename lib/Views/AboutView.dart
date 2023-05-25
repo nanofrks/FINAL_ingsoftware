@@ -13,6 +13,8 @@ class AboutView extends StatelessWidget {
       body: Container(
         margin: const EdgeInsets.all(16),
         padding: const EdgeInsets.all(16),
+
+        //decoración del cuadro de información
         decoration: BoxDecoration(
           color: const Color(0xFFfef9ff),
           borderRadius: BorderRadius.circular(12),
@@ -21,9 +23,12 @@ class AboutView extends StatelessWidget {
             width: 6,
           ),
         ),
+
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+
+            //toda la información dentro del cuadro
             const Text(
               'Desarrolladores:',
               style: TextStyle(
@@ -59,6 +64,8 @@ class AboutView extends StatelessWidget {
               ),
             ),
             const Spacer(),
+
+            //devuelve a la página anterior
             GestureDetector(
               onTap: () {
                 Navigator.push(

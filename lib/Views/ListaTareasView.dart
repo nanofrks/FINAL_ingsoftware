@@ -40,6 +40,8 @@ class ListaTareasView extends StatelessWidget {
                 ],
               ),
             ),
+
+            //lista de hábitos
             const SizedBox(height: 16),
             const HabitButton(
               task: 'Regar las plantas',
@@ -58,6 +60,8 @@ class ListaTareasView extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Expanded(child: Container()),
+
+            //botón para añadir una nueva tarea (no implementado)
             FloatingActionButton(
               backgroundColor: const Color(0xFF9F9FED),
               child: const Icon(
@@ -88,6 +92,7 @@ class HabitButton extends StatefulWidget {
 class _HabitButtonState extends State<HabitButton> {
   bool isCompleted = false;
 
+//marca si ya se completó una tarea
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -96,6 +101,8 @@ class _HabitButtonState extends State<HabitButton> {
           isCompleted = !isCompleted;
         });
       },
+
+      //decoración del contenedor de cada tarea
       child: Container(
         width: 420,
         height: 50,
@@ -105,6 +112,8 @@ class _HabitButtonState extends State<HabitButton> {
           color: const Color(0xFF9F9FED),
           borderRadius: BorderRadius.circular(8),
         ),
+
+        //decoración del checkbox
         child: Row(
           children: [
             Container(

@@ -12,6 +12,8 @@ class AjustesView extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
+
+          //header
           Container(
             height: 80,
             color: const Color(0xFF736CED),

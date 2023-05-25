@@ -49,6 +49,7 @@ class _ChatbotViewState extends State<ChatbotView> {
                       Icons.arrow_back,
                       color: Colors.white,
                     ),
+                    //devuelve a la página principal
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -71,6 +72,8 @@ class _ChatbotViewState extends State<ChatbotView> {
                 ],
               ),
             ),
+
+            //mensaje de la mascota
             const SizedBox(height: 16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -94,21 +97,21 @@ class _ChatbotViewState extends State<ChatbotView> {
                         children: [
                           Text(
                             widget.Nmascota,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color(0xFF9f9fed),
                               fontFamily: 'Boba Milky',
                             ),
                           ),
-                          SizedBox(height: 8),
-                          Text(
+                          const SizedBox(height: 8),
+                          const Text(
                             'Lorem ipsum dolor sit amet consectetur adipiscing elit',
                             style: TextStyle(
                               color: Colors.black,
                               fontFamily: 'Sniglet',
                             ),
                           ),
-                          SizedBox(height: 8),
-                          Text(
+                          const SizedBox(height: 8),
+                          const Text(
                             'Hace 5 minutos',
                             style: TextStyle(
                               color: Colors.grey,
@@ -123,6 +126,8 @@ class _ChatbotViewState extends State<ChatbotView> {
               ),
             ),
             const SizedBox(height: 16),
+
+            //mensajes
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -149,6 +154,8 @@ class _ChatbotViewState extends State<ChatbotView> {
                 },
               ),
             ),
+
+            //barra para escribir mensajes
             Container(
               color: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 16),
