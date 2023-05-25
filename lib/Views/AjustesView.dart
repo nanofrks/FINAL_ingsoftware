@@ -44,6 +44,10 @@ class AjustesView extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   // Acción al presionar el botón "Cerrar sesión"
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginView()),
+                  );
                 },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFFFA7470)),
